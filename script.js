@@ -66,27 +66,57 @@ sr.reveal('.top-header',{})
 
 /* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
 
-/* -- ABOUT INFO & CONTACT INFO -- */
-const srLeft = ScrollReveal({
-  origin: 'left',
-  distance: '80px',
-  duration: 2000,
-  reset: true
-})
+$(document).ready(function() {
+  // Initialize ScrollReveal for the left origin and 80px distance
+  ScrollReveal().reveal('.about-info', {
+      origin: 'left',
+      distance: '80px',
+      duration: 2000,
+      reset: true,
+      delay: 100 // Delay the animation
+  });
 
-srLeft.reveal('.about-info',{delay: 100})
-srLeft.reveal('.contact-info',{delay: 100})
+  ScrollReveal().reveal('.contact-info', {
+      origin: 'left',
+      distance: '80px',
+      duration: 2000,
+      reset: true,
+      delay: 100 // Delay the animation
+  });
 
-/* -- ABOUT SKILLS & FORM BOX -- */
-const srRight = ScrollReveal({
-  origin: 'right',
-  distance: '80px',
-  duration: 2000,
-  reset: true
-})
+  // Initialize ScrollReveal for the right origin and 80px distance
+  ScrollReveal().reveal('.skills-box', {
+      origin: 'right',
+      distance: '80px',
+      duration: 2000,
+      reset: true,
+      delay: 100 // Delay the animation
+  });
 
-srRight.reveal('.skills-box',{delay: 100})
-srRight.reveal('.form-control',{delay: 100})
+  ScrollReveal().reveal('.form-control', {
+      origin: 'right',
+      distance: '80px',
+      duration: 2000,
+      reset: true,
+      delay: 100 // Delay the animation
+  });
+
+  // Other jQuery-based functionality
+  // ...
+  $(document).ready(function () {
+    $('#downloadButton').click(function () {
+      var downloadLink = document.createElement("a");
+      downloadLink.href = "cv.pdf";
+      downloadLink.download = "your-cv.pdf";
+      downloadLink.style.display = "none";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    });
+  });
+  
+});
+
 
 
 
